@@ -1,17 +1,11 @@
 """
-Toy 2D diffusion demo -- trained from scratch, fast, on brain slices you've
+2D diffusion demo trained from scratch, fast, on brain slices you've
 already downloaded from ds004199.
 
-IMPORTANT HONESTY NOTE: this is NOT a true latent diffusion model. A real
-LDM (e.g. the MONAI/Pinaya et al. UK Biobank model) trains a separate VAE
-to compress into latent space first, then diffuses in that latent space --
-that's what makes it fast enough for 3D volumes and anatomically faithful.
-Training a VAE here would add real time, which defeats the "fast" goal.
-This is a small pixel-space DDPM (Denoising Diffusion Probabilistic Model)
-trained directly on downsampled 2D slices. It demonstrates the diffusion
-*mechanism* -- iterative denoising from Gaussian noise -- not a
-scientifically valid brain generator. With a handful of subjects and a few
-hundred training steps, expect blurry, brain-ish blobs, not real anatomy.
+Architecture Note: This model implements a pixel-space Denoising Diffusion Probabilistic Model (DDPM) trained on downsampled 2D slices, rather than a full Latent Diffusion Model (LDM). A standard 3D LDM (such as the MONAI/Pinaya et al. framework) utilizes a two-stage pipeline: training a separate Variational Autoencoder (VAE) to compress volumes into a lower-dimensional latent space before executing the diffusion process.
+
+To maximize training speed and keep the setup lightweight, this implementation operates directly in pixel space. It serves as a structural demonstration of the iterative diffusion mechanism via denoising from pure Gaussian noise, rather than acting as a clinically valid synthetic brain generator. Given the highly constrained training set and step count, the generated outputs will illustrate the underlying sampling mechanics but will yield low-resolution structural approximations rather than precise neuroanatomy.
+
 """
 import numpy as np
 import nibabel as nib

@@ -14,10 +14,9 @@ Schuch et al., 2023, *Scientific Data*).
 - **Group Template** -- build an unbiased anatomical template from
   multiple T1 volumes using `ants.build_template()` (iterative SyN
   registration + averaging).
-- **Diffusion Demo (toy)** -- trains a small pixel-space DDPM from scratch,
+- **Diffusion Demo ** trains a small pixel-space DDPM from scratch,
   in about a minute on CPU, on axial slices from your downloaded subjects.
-  This is a mechanism demo, not a scientifically valid generator -- see the
-  in-app warning for why it's not a true latent diffusion model.
+  This is a mechanism demo
 
 Data is downloaded on demand from OpenNeuro's public S3 bucket
 (anonymous access, CC0 license) and cached under `data/`.
