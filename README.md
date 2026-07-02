@@ -14,7 +14,7 @@ Schuch et al., 2023, *Scientific Data*).
 - **Group Template** -- build an unbiased anatomical template from
   multiple T1 volumes using `ants.build_template()` (iterative SyN
   registration + averaging).
-- **Diffusion Demo ** trains a small pixel-space DDPM from scratch,
+- **Diffusion Demo** trains a small pixel-space DDPM from scratch,
   in about a minute on CPU, on axial slices from your downloaded subjects.
   This is a mechanism demo
 
